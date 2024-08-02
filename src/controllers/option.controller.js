@@ -69,8 +69,8 @@ export const deleteOption = async(req, res) => {
     const option = await optionModel.findById(optionId);
 
     if(!option){
-        res.status(204).json({ error: "Option not found" })
-        console.log(error);
+        return res.status(204).json({ error: "Option not found" });
+        // console.log(error);
     }
 
     if(option.optionCanBeDeleted){
